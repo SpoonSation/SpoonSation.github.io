@@ -1,0 +1,71 @@
+.services {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 80px;
+
+  min-height: calc(100vh - 88px);
+  padding: 80px;
+  background-color: #fff;
+}
+
+/* Левая часть */
+.services__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.services__label {
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  color: #777;
+  text-transform: lowercase;
+}
+
+.services__left h2 {
+  font-size: 80px;
+  font-weight: 400;
+  margin-top: 16px;
+}
+
+/* Правая часть */
+.services__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+}
+
+.service {
+  max-width: 520px;
+}
+
+.service__number {
+  font-size: 18px;
+  color: #aaa;
+  letter-spacing: 0.1em;
+}
+
+.service h3 {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 8px 0 12px;
+}
+
+.service p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Анимация по скроллу */
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

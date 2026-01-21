@@ -1,0 +1,144 @@
+/* Секция */
+.portfolio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 88px);
+}
+
+/* первый блок */
+.portfolio__item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.portfolio__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 0.6s ease;
+}
+
+.portfolio__item:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio__item__2:hover img {
+  transform: scale(1.05);
+}
+/* Overlay */
+.portfolio__overlay {
+  position: absolute;
+  inset: 0;
+  padding: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.portfolio__item:hover .portfolio__overlay {
+  opacity: 1;
+}
+
+.portfolio__overlay h3 {
+  font-size: 28px;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+.portfolio__overlay span {
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  opacity: 0.9;
+}
+
+.portfolio__overlay h3 {
+  font-size: 40px;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+/* Модальное окно */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__content {
+  background: #fff;
+  width: 85%;
+  max-width: 700px; /* 👈 меньше */
+  padding: 48px;
+  position: relative;
+}
+
+.modal__content h2 {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-transform: lowercase;
+}
+
+/* Закрыть */
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  color: #111;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.modal__close:hover {
+  opacity: 1;
+}
+
+.modal__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Квадратная ячейка */
+.modal__work {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 🔥 КЛЮЧ */
+  overflow: hidden;
+  background: #e0e0e0;
+}
+
+/* Картинка внутри */
+.modal__work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 НИКОГДА НЕ ТЯНЕТ */
+}
+
+@media (max-width: 768px) {
+  .portfolio__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
